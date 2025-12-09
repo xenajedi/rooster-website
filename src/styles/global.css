@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --color-rooster-rust: #A64B42;
+  --color-denim-slate: #3B5266;
+  --color-harvest-gold: #D4A259;
+  --color-verdigris: #60857A;
+  --color-paper-cream: #F4F0E6;
+  --color-driftwood: #756A5E;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: var(--color-paper-cream);
+  color: var(--color-denim-slate);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Serif Display', serif;
+}

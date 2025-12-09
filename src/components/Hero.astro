@@ -1,0 +1,19 @@
+---
+const bgImage =
+    "https://res.cloudinary.com/djjpiz1bh/image/upload/v1765307475/hero-card-text_kagpic.webp";
+---
+
+<header
+    id="hero-container"
+    class="relative h-[80vh] w-full bg-cover bg-center bg-no-repeat"
+    style={`background-image: url('${bgImage}');`}
+>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <!-- Optional overlay for better text contrast if needed, but keeping light since image has text -->
+    <div
+        class="relative z-10 container mx-auto h-full flex items-center justify-center text-center"
+    >
+        <!-- Content is in the background image as per prompt implications, but allowing for expansion -->
+        <h1 class="sr-only">Rooster's Antiquity Market</h1>
+    </div>
+</header>

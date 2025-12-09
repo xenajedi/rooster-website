@@ -1,0 +1,86 @@
+---
+const images = Array.from({ length: 10 }).map((_, i) => ({
+    src: `https://via.placeholder.com/400x500/756A5E/F4F0E6?text=Treasure+${i + 1}`,
+    alt: `Antique Treasure ${i + 1}`,
+}));
+---
+
+<section
+    id="treasures-container"
+    class="bg-[var(--color-denim-slate)] py-20 text-[var(--color-paper-cream)] overflow-hidden"
+>
+    <div class="container mx-auto px-4 text-center mb-12">
+        <h2 class="text-4xl md:text-5xl mb-6 text-[var(--color-harvest-gold)]">
+            Our Treasures
+        </h2>
+        <p
+            class="text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed"
+        >
+            "Explore our treasures from antique furniture, vinyls, classic
+            Americana, Louisiana history, and so much more. Our collections
+            change frequently."
+        </p>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="carousel-wrapper relative w-full overflow-hidden">
+        <div
+            class="carousel-track flex space-x-6 px-4 cursor-grab active:cursor-grabbing"
+        >
+            {
+                images.map((img) => (
+                    <div class="flex-shrink-0 w-72 md:w-80 transition-transform duration-300 transform hover:scale-105">
+                        <div class="bg-white/10 p-2 rounded-lg backdrop-blur-sm shadow-xl border border-white/20">
+                            <img
+                                src={img.src}
+                                alt={img.alt}
+                                class="w-full h-96 object-cover rounded shadow-md"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                ))
+            }
+            {
+                /* Duplicate for infinite loop illusion if needed, but GSAP can handle it nicely */
+            }
+            {
+                images.map((img) => (
+                    <div class="flex-shrink-0 w-72 md:w-80 transition-transform duration-300 transform hover:scale-105">
+                        <div class="bg-white/10 p-2 rounded-lg backdrop-blur-sm shadow-xl border border-white/20">
+                            <img
+                                src={img.src}
+                                alt={img.alt}
+                                class="w-full h-96 object-cover rounded shadow-md"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { Draggable } from "gsap/Draggable";
+    // Note: Draggable is a specific plugin, might need registration or just use simple tween
+    // For basic marquee effect without plugins:
+
+    const track = document.querySelector(".carousel-track");
+
+    // Simple Horizontal Auto-Scroll
+    if (track) {
+        gsap.to(track, {
+            xPercent: -50, // Move halfway because we duplicated the items
+            ease: "none",
+            duration: 30, // Adjust speed
+            repeat: -1,
+        });
+
+        // Optional: Pause on hover
+        track.addEventListener("mouseenter", () => gsap.globalTimeline.pause());
+        track.addEventListener("mouseleave", () => gsap.globalTimeline.play());
+    }
+</script>

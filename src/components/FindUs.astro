@@ -1,0 +1,91 @@
+---
+
+---
+
+<section
+    id="findus-container"
+    class="bg-[var(--color-paper-cream)] py-20 text-[var(--color-denim-slate)]"
+>
+    <div
+        class="container mx-auto px-4 flex flex-col md:flex-row gap-0 shadow-2xl rounded-lg overflow-hidden"
+    >
+        <!-- Left Side: Hours/Info -->
+        <div class="w-full md:w-1/3 bg-white p-12 flex flex-col justify-center">
+            <h2
+                class="text-4xl text-[var(--color-rooster-rust)] mb-8 font-serif"
+            >
+                Visit Us
+            </h2>
+
+            <div class="mb-8">
+                <h3
+                    class="font-bold text-xl mb-2 uppercase tracking-wide text-[var(--color-driftwood)]"
+                >
+                    Hours
+                </h3>
+                <p class="mb-1">
+                    <span class="w-24 inline-block font-semibold">Mon-Tue:</span
+                    > Closed
+                </p>
+                <p class="mb-1">
+                    <span class="w-24 inline-block font-semibold">Wed-Sat:</span
+                    > 10am - 5pm
+                </p>
+                <p>
+                    <span class="w-24 inline-block font-semibold">Sun:</span> 12pm
+                    - 5pm
+                </p>
+            </div>
+
+            <div>
+                <h3
+                    class="font-bold text-xl mb-2 uppercase tracking-wide text-[var(--color-driftwood)]"
+                >
+                    Location
+                </h3>
+                <p class="mb-1">3209 Kaliste Saloom Rd</p>
+                <p class="mb-4">Lafayette, LA 70508</p>
+                <p class="font-bold text-[var(--color-rooster-rust)] text-lg">
+                    (337) 216-0513
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Side: Map -->
+        <div
+            class="w-full md:w-2/3 bg-[var(--color-harvest-gold)] relative overflow-hidden min-h-[400px]"
+        >
+            <!-- Map Iframe with Sepia Overlay -->
+            <div class="absolute inset-0 filter sepia-[.50] contrast-125">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.5786884610115!2d-92.0573456!3d30.1255567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86249dbf0a0a0a0a%3A0x0!2zMzDCsDA3JzMyLjAiTiA5MsKwMDMnMjYuNCJX!5e0!3m2!1sen!2sus!4v1634567890123!5m2!1sen!2sus"
+                    *
+                    Note:
+                    Using
+                    a
+                    generic
+                    coordinate
+                    iframe
+                    or
+                    closest
+                    approximation
+                    if
+                    keyless
+                    works,
+                    otherwise
+                    placeholder
+                    *
+                    class="w-full h-full border-0"
+                    allowfullscreen=""
+                    loading="lazy"
+                >
+                </iframe>
+                <!-- Fallback/Overlay to ensure sepia and style -->
+                <div
+                    class="absolute inset-0 pointer-events-none mix-blend-multiply bg-[var(--color-harvest-gold)]/20"
+                >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

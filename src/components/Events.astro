@@ -1,0 +1,75 @@
+---
+const events = [
+    { date: "Dec 12", title: "Holiday Market Kick-off" },
+    { date: "Dec 15", title: "Vinyl & Vintage Night" },
+    { date: "Dec 18", title: "Santa at the Rooster" },
+    { date: "Dec 22", title: "Last Minute Gift Hunt" },
+    { date: "Jan 05", title: "New Year Collection Reveal" },
+    { date: "Jan 12", title: "Cajun Music Jam Session" },
+];
+
+const days = Array.from({ length: 31 }, (_, i) => i + 1);
+---
+
+<section
+    id="events-container"
+    class="bg-[var(--color-rooster-rust)] py-20 text-[var(--color-paper-cream)]"
+>
+    <div class="container mx-auto px-4 flex flex-col md:flex-row gap-12">
+        <!-- Left Side: Events List -->
+        <div class="w-full md:w-1/2">
+            <h2
+                class="text-4xl md:text-5xl mb-8 text-[var(--color-harvest-gold)] border-b-2 border-[var(--color-harvest-gold)] inline-block pb-2"
+            >
+                Upcoming Events
+            </h2>
+            <ul class="space-y-6">
+                {
+                    events.map((event) => (
+                        <li class="flex items-baseline border-b border-[var(--color-paper-cream)]/20 pb-2 hover:pl-2 transition-all duration-300">
+                            <span class="font-bold text-xl w-24 text-[var(--color-harvest-gold)]">
+                                {event.date}
+                            </span>
+                            <span class="text-lg font-light">
+                                {event.title}
+                            </span>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <!-- Right Side: Calendar Visual -->
+        <div class="w-full md:w-1/2 flex justify-center items-center">
+            <div
+                class="bg-[var(--color-paper-cream)] p-6 rounded-lg shadow-2xl w-full max-w-md text-[var(--color-denim-slate)]"
+            >
+                <div
+                    class="text-center font-bold text-2xl mb-6 font-serif uppercase tracking-widest"
+                >
+                    December 2026
+                </div>
+                <div
+                    class="grid grid-cols-7 gap-2 text-center text-sm font-semibold mb-2"
+                >
+                    <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>
+                        Th
+                    </div><div>Fr</div><div>Sa</div>
+                </div>
+                <div class="grid grid-cols-7 gap-2">
+                    <!-- Offset for start of month (mock) -->
+                    <div class="p-2"></div><div class="p-2"></div>
+                    {
+                        days.map((day) => (
+                            <div
+                                class={`p-2 rounded-full cursor-pointer hover:bg-[var(--color-rooster-rust)] hover:text-white transition-colors duration-200 ${[12, 15, 18, 22].includes(day) ? "bg-[var(--color-harvest-gold)] text-white font-bold" : ""}`}
+                            >
+                                {day}
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

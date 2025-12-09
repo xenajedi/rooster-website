@@ -1,0 +1,60 @@
+---
+const logoUrl =
+    "https://res.cloudinary.com/djjpiz1bh/image/upload/v1765304707/rooster-framed_o6paga.webp";
+
+const linksLeft = [
+    { name: "Our Treasures", href: "#treasures-container" },
+    { name: "Our Community", href: "#community-container" },
+    { name: "Our Story", href: "#story-container" },
+];
+
+const linksRight = [
+    { name: "Events", href: "#events-container" },
+    { name: "Find Us", href: "#findus-container" },
+    { name: "Holler at Us", href: "#contact-container" },
+];
+---
+
+<nav
+    id="nav-bar-container"
+    class="bg-[var(--color-paper-cream)] py-4 sticky top-0 z-50 shadow-md"
+>
+    <div
+        class="container mx-auto flex justify-center items-center font-bold text-[var(--color-denim-slate)]"
+    >
+        <div class="flex space-x-8 items-center">
+            {
+                linksLeft.map((link) => (
+                    <a
+                        href={link.href}
+                        class="hover:text-[var(--color-rooster-rust)] transition-colors duration-300 uppercase tracking-wide text-sm"
+                    >
+                        {link.name}
+                    </a>
+                ))
+            }
+        </div>
+
+        <!-- Central Logo -->
+        <div class="mx-8">
+            <img
+                src={logoUrl}
+                alt="Rooster's Antiquity Market Logo"
+                class="h-20 w-auto object-contain hover:scale-105 transition-transform duration-300"
+            />
+        </div>
+
+        <div class="flex space-x-8 items-center">
+            {
+                linksRight.map((link) => (
+                    <a
+                        href={link.href}
+                        class="hover:text-[var(--color-rooster-rust)] transition-colors duration-300 uppercase tracking-wide text-sm"
+                    >
+                        {link.name}
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</nav>
