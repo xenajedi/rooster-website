@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
 :root {
   --color-rooster-rust: #A64B42;
   --color-denim-slate: #3B5266;
